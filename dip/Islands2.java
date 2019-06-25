@@ -10,14 +10,16 @@ class Islands2
     {
     	this.image = image;
     	
-    	int matrix[][] = getMatrix(image); 
-    	
+    	int matrix[][] = BufferedImageToArray(image); 
+	    
     	for(int row = 0; row < matrix.length; row++)
-    		for(int column = 0; column < matrix[0].length; column++)
-    			System.out.println(matrix[row][column]);
-    	
-        System.out.println("Number of islands is: " + countIslands(matrix));
-	}
+    	{
+    		for(int column = 0; column < matrix[row].length; column++)
+    			 System.out.printf("%4d", matrix[row][column]);
+    		
+    		System.out.println();
+    	}
+    }
 	
     static final int ROW = 5, COL = 5; 
   
