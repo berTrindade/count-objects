@@ -85,5 +85,20 @@ class Islands2
         
         return mat;
     }
-    
+	
+    public int [][] BufferedImageToArray(BufferedImage bi)  
+    {
+    	int W = bi.getWidth ( ), H = bi.getHeight ( );
+    	int [][]arr = new int [ W ] [ H ] ;
+    	for(int y = 0 ; y < H; y++)
+    	{
+    		for ( int x = 0 ; x <W; x ++ )  
+    		{ 
+    			int rgb = bi.getRGB ( x, y ) ; 
+    			int valor = ( rgb >> 8 ) & 0xFF ; 
+    			arr [ x ] [ y ] = valor;
+    		}
+    	}
+    	return arr;
+    }
 } 
